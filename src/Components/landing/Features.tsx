@@ -30,10 +30,10 @@ function Features({heightSetter}:{
         </div>
     ))
 
-    const ref = useRef(null)
+    const ref = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
-        heightSetter(ref.current.clientHeight+500)
+        heightSetter(ref.current ? String(ref.current.clientHeight+500): "500")
     })
 
   return (
